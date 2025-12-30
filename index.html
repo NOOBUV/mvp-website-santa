@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Chakra Project - Find Your Balance</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Lato:wght@300;400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#c5896d", // Warm terracotta
+              secondary: "#FDF8F5", // Lighter warm beige
+              "background-light": "#ffffff",
+              "background-dark": "#1f1d1b",
+              "surface-light": "#fcf5f0", 
+              "surface-dark": "#2d2a28",
+              "text-light": "#4a4a4a",
+              "text-dark": "#e0e0e0",
+            },
+            fontFamily: {
+              display: ['"Playfair Display"', 'serif'],
+              body: ['"Lato"', 'sans-serif'],
+            },
+            backgroundImage: {
+              'blob-pattern': "url('https://www.transparenttextures.com/patterns/cubes.png')", 
+            }
+          },
+        },
+      };
+    </script>
+<style>.blob-shape {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+    .hero-img-shape {
+        border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;}
+</style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark font-body transition-colors duration-300">
+<nav class="fixed w-full z-50 bg-secondary/95 dark:bg-background-dark/95 backdrop-blur-md py-4 transition-all duration-300 shadow-sm border-b border-primary/10">
+<div class="container mx-auto px-6 flex justify-between items-center">
+<a class="flex items-center gap-2 group" href="#">
+<img src="https://goodkarma-assets.s3.amazonaws.com/uploads/chakra_project/39/chakra-project-logo.png" alt="Chakra Project Logo" class="h-10 w-auto group-hover:scale-105 transition-transform duration-300"/>
+<span class="text-2xl font-display font-bold text-primary dark:text-white tracking-wide">Chakra Project</span>
+</a>
+<div class="hidden md:flex items-center space-x-10">
+<a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium tracking-wide" href="#home">Home</a>
+<a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium tracking-wide" href="#pricing">Classes</a>
+<a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium tracking-wide" href="#workshops">Workshops</a>
+<a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium tracking-wide" href="#courses">Courses</a>
+<a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium tracking-wide" href="#personal">Personal</a>
+</div>
+<div class="flex items-center gap-2 md:gap-4">
+<button class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" onclick="document.documentElement.classList.toggle('dark')">
+<span class="material-symbols-outlined text-gray-600 dark:text-gray-300 text-xl">brightness_4</span>
+</button>
+<a class="hidden sm:inline-block bg-primary hover:bg-[#b0785e] text-white px-6 md:px-8 py-2 md:py-3 rounded-full font-medium transition-all transform hover:scale-105 shadow-lg shadow-primary/20 text-xs md:text-sm" href="#book">
+                Book Class
+            </a>
+<button class="md:hidden p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" onclick="document.getElementById('mobileMenu').classList.toggle('hidden')">
+<span class="material-symbols-outlined text-gray-600 dark:text-gray-300 text-2xl">menu</span>
+</button>
+</div>
+</div>
+<div id="mobileMenu" class="hidden md:hidden bg-secondary dark:bg-background-dark border-t border-primary/10 px-6 py-4">
+<div class="flex flex-col space-y-4">
+<a class="text-gray-600 dark:text-gray-300 hover:text-primary transition-colors text-sm font-medium" href="#home">Home</a>
+<a class="text-gray-600 dark:text-gray-300 hover:text-primary transition-colors text-sm font-medium" href="#pricing">Classes</a>
+<a class="text-gray-600 dark:text-gray-300 hover:text-primary transition-colors text-sm font-medium" href="#workshops">Workshops</a>
+<a class="text-gray-600 dark:text-gray-300 hover:text-primary transition-colors text-sm font-medium" href="#courses">Video Courses</a>
+<a class="text-gray-600 dark:text-gray-300 hover:text-primary transition-colors text-sm font-medium" href="#personal">Personal Classes</a>
+<a class="sm:hidden bg-primary text-white px-6 py-2 rounded-full font-medium text-sm text-center" href="#pricing">View Classes</a>
+</div>
+</div>
+</nav>
+<section class="relative pt-24 md:pt-32 pb-12 md:pb-20 overflow-hidden bg-secondary dark:bg-background-dark" id="home">
+<div class="absolute top-0 right-0 w-2/3 h-full bg-white dark:bg-surface-dark -z-10 blob-shape opacity-40 translate-x-1/4"></div>
+<div class="absolute top-20 left-10 w-96 h-96 bg-primary/10 rounded-full blur-[100px] -z-10"></div>
+<div class="container mx-auto px-6">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
+<div class="order-2 lg:order-1 space-y-4 md:space-y-8 animate-fade-in-up pr-0 lg:pr-12">
+<span class="text-primary font-bold tracking-widest text-xs uppercase bg-primary/10 px-3 py-1 rounded-full">Breathe, Relax, and be Still.</span>
+<h1 class="text-4xl md:text-6xl lg:text-[4.5rem] font-display font-medium text-[#4a4a4a] dark:text-white leading-[1.1]">
+                    Balance your <br/> <span class="italic text-primary">life.</span>
+</h1>
+<p class="text-base md:text-lg text-gray-500 dark:text-gray-400 max-w-md leading-relaxed font-light">
+                    Join Santhanam Sridharan on a journey of self-discovery through the practice of yoga. Find peace, strength, and happiness in every breath.
+                </p>
+<div class="flex flex-wrap gap-3 md:gap-4 pt-2 md:pt-4">
+<a class="bg-primary text-white px-6 md:px-10 py-3 md:py-4 rounded-full font-medium shadow-xl shadow-primary/20 hover:shadow-primary/40 transition-all transform hover:-translate-y-1 text-sm md:text-base" href="#pricing">
+                        View Classes
+                    </a>
+<a class="flex items-center gap-2 px-4 md:px-8 py-3 md:py-4 rounded-full font-medium text-gray-600 hover:text-primary transition-colors text-sm md:text-base" href="#video">
+<span class="material-symbols-outlined">play_circle</span> Watch Video
+                    </a>
+</div>
+</div>
+<div class="order-1 lg:order-2 relative flex justify-center lg:justify-end">
+<div class="absolute inset-0 bg-primary/20 blur-3xl transform scale-90 translate-y-4 rounded-full"></div>
+<div class="relative w-full max-w-lg aspect-[4/5] lg:mr-10">
+<div class="relative w-full h-full hero-img-shape overflow-hidden z-10 shadow-2xl shadow-primary/10">
+<img alt="Yogi Santhanam Sridharan meditating" class="w-full h-full object-cover" src="santa-img.png"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Free Trial Banner -->
+<section class="py-6 bg-primary/10 dark:bg-primary/5">
+<div class="container mx-auto px-6">
+<div class="bg-white dark:bg-surface-dark rounded-2xl p-6 md:p-8 shadow-sm border border-primary/20">
+<div class="flex flex-col md:flex-row items-center justify-between gap-4">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary text-3xl">redeem</span>
+<div>
+<h3 class="font-display font-medium text-lg text-gray-800 dark:text-white mb-1">Free Trial Classes</h3>
+<p class="text-gray-500 dark:text-gray-400 text-sm">Are you a new student? Attend up to 1 trial group class absolutely free. Review our schedule below and join!</p>
+</div>
+</div>
+<a class="bg-primary text-white px-6 py-3 rounded-full font-medium text-sm hover:bg-[#b0785e] transition-colors whitespace-nowrap" href="https://chakraproject.practicenow.us/students/subscriptions?service=group_class" target="_blank">
+                    Try Free Class
+                </a>
+</div>
+</div>
+</div>
+</section>
+<section class="py-12 md:py-24 bg-surface-light dark:bg-surface-dark relative overflow-hidden" id="about">
+<div class="container mx-auto px-6 pt-4 md:pt-10">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-20 items-center">
+<div class="relative order-2 lg:order-1 hidden lg:block">
+<div class="relative overflow-hidden rounded-[2rem] shadow-2xl">
+<img alt="Yoga Session" class="w-full h-[500px] object-cover" src="santa-img3.png"/>
+<div class="absolute inset-0 bg-black/10"></div>
+</div>
+<div class="absolute -bottom-6 -right-6 w-32 h-32 bg-secondary rounded-full -z-10 flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl text-primary/50">spa</span>
+</div>
+</div>
+<div class="space-y-4 md:space-y-8 pl-0 lg:pl-4 order-1 lg:order-2">
+<span class="text-primary font-medium tracking-widest text-xs md:text-sm uppercase">Philosophy</span>
+<h2 class="text-3xl md:text-4xl lg:text-5xl font-display font-medium text-gray-800 dark:text-white leading-[1.15]">
+                    Focus on strength, <br/> balance &amp; flexibility.
+                </h2>
+<p class="text-gray-500 dark:text-gray-400 leading-relaxed max-w-lg font-light">
+                    "Yoga is not about touching your toes, it's about what you learn on the way down." We believe in a holistic approach that nurtures both body and mind, creating a sustainable lifestyle of wellness.
+                </p>
+<div class="grid grid-cols-3 gap-6 pt-6 border-t border-gray-200 dark:border-gray-700">
+<div>
+<span class="block text-4xl font-display font-medium text-primary">15+</span>
+<span class="text-[10px] text-gray-500 font-bold uppercase tracking-widest mt-1 block">Years Exp.</span>
+</div>
+<div>
+<span class="block text-4xl font-display font-medium text-primary">10k+</span>
+<span class="text-[10px] text-gray-500 font-bold uppercase tracking-widest mt-1 block">Followers</span>
+</div>
+<div>
+<span class="block text-4xl font-display font-medium text-primary">500+</span>
+<span class="text-[10px] text-gray-500 font-bold uppercase tracking-widest mt-1 block">Students</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-12 md:py-24 bg-secondary dark:bg-background-dark" id="workshops">
+<div class="container mx-auto px-6">
+<div class="flex flex-col md:flex-row justify-between items-center md:items-end mb-8 md:mb-16 gap-4 text-center md:text-left">
+<div>
+<span class="text-primary font-medium tracking-widest text-sm uppercase mb-2 block">Workshops &amp; Studies</span>
+<h2 class="text-3xl md:text-4xl font-display font-medium text-gray-800 dark:text-white">Upcoming Workshops</h2>
+</div>
+<a class="hidden md:flex items-center gap-2 text-primary font-medium hover:text-gray-800 transition-colors" href="https://chakraproject.practicenow.us/students/subscriptions?service=workshop" target="_blank">
+                View All Workshops <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center">
+<div class="space-y-4 md:space-y-6 max-w-lg mx-auto lg:mx-0">
+<div class="bg-white dark:bg-surface-dark p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow flex gap-6 items-center group cursor-pointer border border-transparent hover:border-primary/20">
+<div class="bg-primary/10 rounded-xl p-4 text-center min-w-[5rem]">
+<span class="block text-3xl font-display font-bold text-primary">08</span>
+<span class="text-xs font-bold text-gray-500 uppercase">Jan</span>
+</div>
+<div>
+<h3 class="font-display font-medium text-xl text-gray-800 dark:text-white mb-2 group-hover:text-primary transition-colors">Patanjali Yoga Sutras Study: Day 2</h3>
+<div class="flex items-center gap-4 text-xs text-gray-500 font-bold uppercase">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">schedule</span> 8:00 PM</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">videocam</span> Zoom</span>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-surface-dark p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow flex gap-6 items-center group cursor-pointer border border-transparent hover:border-primary/20">
+<div class="bg-primary/10 rounded-xl p-4 text-center min-w-[5rem]">
+<span class="block text-3xl font-display font-bold text-primary">17</span>
+<span class="text-xs font-bold text-gray-500 uppercase">Jan</span>
+</div>
+<div>
+<h3 class="font-display font-medium text-xl text-gray-800 dark:text-white mb-2 group-hover:text-primary transition-colors">Mumbai Offline Workshop</h3>
+<div class="flex items-center gap-4 text-xs text-gray-500 font-bold uppercase">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">schedule</span> 9:00 AM</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">location_on</span> Lokhandwala</span>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-surface-dark p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow flex gap-6 items-center group cursor-pointer border border-transparent hover:border-primary/20">
+<div class="bg-primary/10 rounded-xl p-4 text-center min-w-[5rem]">
+<span class="block text-3xl font-display font-bold text-primary">18</span>
+<span class="text-xs font-bold text-gray-500 uppercase">Jan</span>
+</div>
+<div>
+<h3 class="font-display font-medium text-xl text-gray-800 dark:text-white mb-2 group-hover:text-primary transition-colors">Mumbai Offline Workshop</h3>
+<div class="flex items-center gap-4 text-xs text-gray-500 font-bold uppercase">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">schedule</span> 9:00 AM</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">location_on</span> Lokhandwala</span>
+</div>
+</div>
+</div>
+<!-- Workshop Pricing Card -->
+<div class="bg-primary/5 dark:bg-primary/10 p-4 rounded-xl mt-4">
+<div class="flex items-center justify-between">
+<div>
+<span class="text-sm text-gray-600 dark:text-gray-300">Mumbai Workshop (17-18 Jan)</span>
+<span class="block text-lg font-display font-bold text-primary">₹2,700</span>
+</div>
+<a class="bg-primary text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-[#b0785e] transition-colors" href="https://chakraproject.practicenow.us/students/subscriptions?service=workshop" target="_blank">Book Now</a>
+</div>
+</div>
+</div>
+<div class="relative h-full min-h-[400px] hidden lg:flex items-center justify-center">
+<div class="absolute inset-0 bg-white dark:bg-white/5 blob-shape transform rotate-6 scale-95"></div>
+<div class="relative w-full max-w-md aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl">
+<img alt="Yoga workshop session" class="w-full h-full object-cover" src="santa-img2.png"/>
+<div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-8">
+<p class="text-white font-display text-xl">"Balance is not something you find, it's something you create."</p>
+</div>
+</div>
+<div class="absolute -top-4 -right-4 w-20 h-20 bg-primary/20 rounded-full blur-xl"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Group Classes Pricing Section -->
+<section class="py-12 md:py-24 bg-background-light dark:bg-background-dark" id="pricing">
+<div class="container mx-auto px-6">
+<div class="text-center mb-8 md:mb-16">
+<span class="text-primary font-medium tracking-widest text-sm uppercase mb-2 block">Online Group Classes</span>
+<h2 class="text-3xl md:text-4xl font-display font-medium text-gray-800 dark:text-white">Choose Your Plan</h2>
+<p class="text-gray-500 dark:text-gray-400 mt-4 max-w-2xl mx-auto">Join our online yoga classes from anywhere. Choose a plan that fits your schedule and commitment level.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Daily Asana Sadhana -->
+<div class="bg-white dark:bg-surface-dark rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow border border-gray-100 dark:border-gray-800">
+<div class="text-center mb-6">
+<h3 class="font-display font-medium text-xl text-gray-800 dark:text-white mb-2">Daily Asana Sadhana</h3>
+<span class="text-xs text-gray-500 uppercase tracking-wider">25 sessions/month</span>
+</div>
+<div class="text-center mb-6">
+<span class="text-3xl font-display font-bold text-primary">₹6,200</span>
+<span class="text-gray-500 text-sm">/month</span>
+</div>
+<ul class="space-y-3 mb-6 text-sm text-gray-600 dark:text-gray-400">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Daily practice sessions</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Online via Zoom</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> All levels welcome</li>
+</ul>
+<a class="block w-full text-center bg-primary text-white py-3 rounded-full font-medium hover:bg-[#b0785e] transition-colors" href="https://chakraproject.practicenow.us/students/subscriptions?service=group_class" target="_blank">Join Now</a>
+</div>
+<!-- Weekdays Yoga -->
+<div class="bg-white dark:bg-surface-dark rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow border border-gray-100 dark:border-gray-800">
+<div class="text-center mb-6">
+<h3 class="font-display font-medium text-xl text-gray-800 dark:text-white mb-2">Weekdays Yoga</h3>
+<span class="text-xs text-gray-500 uppercase tracking-wider">20 sessions/month</span>
+</div>
+<div class="text-center mb-6">
+<span class="text-3xl font-display font-bold text-primary">₹5,800</span>
+<span class="text-gray-500 text-sm">/month</span>
+</div>
+<ul class="space-y-3 mb-6 text-sm text-gray-600 dark:text-gray-400">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Monday to Friday</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Online via Zoom</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Beginners friendly</li>
+</ul>
+<a class="block w-full text-center bg-primary text-white py-3 rounded-full font-medium hover:bg-[#b0785e] transition-colors" href="https://chakraproject.practicenow.us/students/subscriptions?service=group_class" target="_blank">Join Now</a>
+</div>
+<!-- Thrice Weekly - Popular -->
+<div class="bg-primary rounded-2xl p-6 shadow-lg relative overflow-hidden">
+<div class="absolute top-0 right-0 bg-white text-primary text-xs font-bold px-3 py-1 rounded-bl-lg">POPULAR</div>
+<div class="text-center mb-6">
+<h3 class="font-display font-medium text-xl text-white mb-2">Thrice Weekly</h3>
+<span class="text-xs text-white/80 uppercase tracking-wider">12 sessions/month</span>
+</div>
+<div class="text-center mb-6">
+<span class="text-3xl font-display font-bold text-white">₹4,300</span>
+<span class="text-white/80 text-sm">/month</span>
+</div>
+<ul class="space-y-3 mb-6 text-sm text-white/90">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-white text-sm">check_circle</span> 3 sessions per week</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-white text-sm">check_circle</span> Online via Zoom</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-white text-sm">check_circle</span> Perfect for beginners</li>
+</ul>
+<a class="block w-full text-center bg-white text-primary py-3 rounded-full font-medium hover:bg-gray-100 transition-colors" href="https://chakraproject.practicenow.us/students/subscriptions?service=group_class" target="_blank">Join Now</a>
+</div>
+<!-- Immersive Plan -->
+<div class="bg-white dark:bg-surface-dark rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow border border-gray-100 dark:border-gray-800">
+<div class="text-center mb-6">
+<h3 class="font-display font-medium text-xl text-gray-800 dark:text-white mb-2">Immersive Yoga</h3>
+<span class="text-xs text-gray-500 uppercase tracking-wider">40 sessions/month</span>
+</div>
+<div class="text-center mb-6">
+<span class="text-3xl font-display font-bold text-primary">₹7,600</span>
+<span class="text-gray-500 text-sm">/month</span>
+</div>
+<ul class="space-y-3 mb-6 text-sm text-gray-600 dark:text-gray-400">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Multiple daily sessions</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Online via Zoom</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> For dedicated yogis</li>
+</ul>
+<a class="block w-full text-center bg-primary text-white py-3 rounded-full font-medium hover:bg-[#b0785e] transition-colors" href="https://chakraproject.practicenow.us/students/subscriptions?service=group_class" target="_blank">Join Now</a>
+</div>
+</div>
+<!-- Additional Options -->
+<div class="mt-8 flex flex-wrap justify-center gap-4">
+<div class="bg-surface-light dark:bg-surface-dark px-6 py-3 rounded-full flex items-center gap-3">
+<span class="text-sm text-gray-600 dark:text-gray-300">Single Session:</span>
+<span class="font-display font-bold text-primary">₹700</span>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark px-6 py-3 rounded-full flex items-center gap-3">
+<span class="text-sm text-gray-600 dark:text-gray-300">Offline Classes (12/month):</span>
+<span class="font-display font-bold text-primary">₹4,600</span>
+</div>
+</div>
+<div class="text-center mt-8">
+<a class="inline-flex items-center gap-2 text-primary font-medium hover:text-gray-800 transition-colors" href="https://chakraproject.practicenow.us/students/subscriptions?service=group_class" target="_blank">
+            View All Plans & Multi-Month Discounts <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Video Courses Section -->
+<section class="py-12 md:py-24 bg-surface-light dark:bg-surface-dark" id="courses">
+<div class="container mx-auto px-6">
+<div class="text-center mb-8 md:mb-16">
+<span class="text-primary font-bold tracking-[0.2em] text-[10px] uppercase block mb-3">Self-Paced Learning</span>
+<h2 class="text-3xl md:text-4xl font-display font-medium text-gray-800 dark:text-white">Video Courses</h2>
+<p class="text-gray-500 dark:text-gray-400 mt-4 max-w-2xl mx-auto">Learn at your own pace with our recorded courses and masterclasses.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Free Course -->
+<div class="bg-white dark:bg-background-dark rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow group">
+<div class="h-48 bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
+<span class="material-symbols-outlined text-6xl text-primary/40 group-hover:scale-110 transition-transform">self_improvement</span>
+</div>
+<div class="p-6">
+<div class="flex items-center gap-2 mb-3">
+<span class="bg-green-100 text-green-700 text-xs font-bold px-2 py-1 rounded">FREE</span>
+<span class="text-xs text-gray-500">1 month access</span>
+</div>
+<h3 class="font-display font-medium text-lg text-gray-800 dark:text-white mb-2">Yoga Beyond Asanas: 8 Limbs of Yoga</h3>
+<p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Explore the philosophical foundations of yoga practice.</p>
+<a class="block w-full text-center border-2 border-primary text-primary py-2 rounded-full font-medium hover:bg-primary hover:text-white transition-colors" href="https://chakraproject.practicenow.us/students/subscriptions?service=video_subscription" target="_blank">Enroll Free</a>
+</div>
+</div>
+<!-- Meditation Course -->
+<div class="bg-white dark:bg-background-dark rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow group">
+<div class="h-48 bg-gradient-to-br from-blue-100 to-blue-50 flex items-center justify-center">
+<span class="material-symbols-outlined text-6xl text-blue-300 group-hover:scale-110 transition-transform">spa</span>
+</div>
+<div class="p-6">
+<div class="flex items-center gap-2 mb-3">
+<span class="text-lg font-display font-bold text-primary">₹200</span>
+<span class="text-xs text-gray-500">1 month access</span>
+</div>
+<h3 class="font-display font-medium text-lg text-gray-800 dark:text-white mb-2">Yoga Beyond Asanas: Meditation</h3>
+<p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Deep dive into meditation techniques and practices.</p>
+<a class="block w-full text-center bg-primary text-white py-2 rounded-full font-medium hover:bg-[#b0785e] transition-colors" href="https://chakraproject.practicenow.us/students/subscriptions?service=video_subscription" target="_blank">Enroll Now</a>
+</div>
+</div>
+<!-- Handstand Masterclass -->
+<div class="bg-white dark:bg-background-dark rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow group">
+<div class="h-48 bg-gradient-to-br from-orange-100 to-orange-50 flex items-center justify-center">
+<span class="material-symbols-outlined text-6xl text-orange-300 group-hover:scale-110 transition-transform">fitness_center</span>
+</div>
+<div class="p-6">
+<div class="flex items-center gap-2 mb-3">
+<span class="text-lg font-display font-bold text-primary">₹700</span>
+<span class="text-xs text-gray-500">3 months access</span>
+</div>
+<h3 class="font-display font-medium text-lg text-gray-800 dark:text-white mb-2">Handstand Masterclass: Part 1 & 2</h3>
+<p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Master the art of inversions with step-by-step guidance.</p>
+<a class="block w-full text-center bg-primary text-white py-2 rounded-full font-medium hover:bg-[#b0785e] transition-colors" href="https://chakraproject.practicenow.us/students/subscriptions?service=video_subscription" target="_blank">Enroll Now</a>
+</div>
+</div>
+<!-- Yoga Anywhere Program -->
+<div class="bg-white dark:bg-background-dark rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow group">
+<div class="h-48 bg-gradient-to-br from-purple-100 to-purple-50 flex items-center justify-center">
+<span class="material-symbols-outlined text-6xl text-purple-300 group-hover:scale-110 transition-transform">travel_explore</span>
+</div>
+<div class="p-6">
+<div class="flex items-center gap-2 mb-3">
+<span class="text-lg font-display font-bold text-primary">₹2,500</span>
+<span class="text-xs text-gray-500">1 month access</span>
+</div>
+<h3 class="font-display font-medium text-lg text-gray-800 dark:text-white mb-2">Yoga Anywhere Anytime Program</h3>
+<p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Complete yoga program you can practice anywhere.</p>
+<a class="block w-full text-center bg-primary text-white py-2 rounded-full font-medium hover:bg-[#b0785e] transition-colors" href="https://chakraproject.practicenow.us/students/subscriptions?service=video_subscription" target="_blank">Enroll Now</a>
+</div>
+</div>
+<!-- Instagram Masterclass -->
+<div class="bg-white dark:bg-background-dark rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow group">
+<div class="h-48 bg-gradient-to-br from-pink-100 to-pink-50 flex items-center justify-center">
+<span class="material-symbols-outlined text-6xl text-pink-300 group-hover:scale-110 transition-transform">photo_camera</span>
+</div>
+<div class="p-6">
+<div class="flex items-center gap-2 mb-3">
+<span class="text-lg font-display font-bold text-primary">₹300</span>
+<span class="text-xs text-gray-500">6 months access</span>
+</div>
+<h3 class="font-display font-medium text-lg text-gray-800 dark:text-white mb-2">Instagram Masterclass for Yoga Teachers</h3>
+<p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Co-hosted with Urvee. Grow your presence authentically.</p>
+<a class="block w-full text-center bg-primary text-white py-2 rounded-full font-medium hover:bg-[#b0785e] transition-colors" href="https://chakraproject.practicenow.us/students/subscriptions?service=video_subscription" target="_blank">Enroll Now</a>
+</div>
+</div>
+</div>
+<div class="text-center mt-8">
+<a class="inline-flex items-center gap-2 text-primary font-medium hover:text-gray-800 transition-colors" href="https://chakraproject.practicenow.us/students/subscriptions?service=video_subscription" target="_blank">
+            Browse All Video Courses <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+
+<!-- Personal Classes Section -->
+<section class="py-12 md:py-24 bg-secondary dark:bg-background-dark" id="personal">
+<div class="container mx-auto px-6">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div>
+<span class="text-primary font-medium tracking-widest text-sm uppercase mb-2 block">The Anukula Program</span>
+<h2 class="text-3xl md:text-4xl font-display font-medium text-gray-800 dark:text-white mb-6">One-on-One Personal Classes</h2>
+<p class="text-gray-500 dark:text-gray-400 mb-8 leading-relaxed">
+                You get personal attention on a schedule that suits you. We'll work with you to come up with a class plan that's tailor-made for your needs, goals, and pace.
+            </p>
+<div class="space-y-4 mb-8">
+<div class="flex items-center gap-4 bg-white dark:bg-surface-dark p-4 rounded-xl">
+<span class="material-symbols-outlined text-primary text-2xl">schedule</span>
+<div>
+<span class="block font-medium text-gray-800 dark:text-white">30-minute sessions</span>
+<span class="text-sm text-gray-500">Starting at ₹900/session</span>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-white dark:bg-surface-dark p-4 rounded-xl">
+<span class="material-symbols-outlined text-primary text-2xl">timer</span>
+<div>
+<span class="block font-medium text-gray-800 dark:text-white">1-hour sessions</span>
+<span class="text-sm text-gray-500">Starting at ₹1,500/session</span>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-white dark:bg-surface-dark p-4 rounded-xl">
+<span class="material-symbols-outlined text-primary text-2xl">calendar_month</span>
+<div>
+<span class="block font-medium text-gray-800 dark:text-white">Flexible packages</span>
+<span class="text-sm text-gray-500">12, 16, or 20 sessions/month</span>
+</div>
+</div>
+</div>
+<div class="flex flex-wrap gap-4">
+<a class="bg-primary text-white px-8 py-3 rounded-full font-medium hover:bg-[#b0785e] transition-colors" href="https://chakraproject.practicenow.us/students/subscriptions?service=personal_class" target="_blank">View Plans</a>
+<a class="flex items-center gap-2 px-6 py-3 border border-gray-300 rounded-full text-gray-600 hover:border-primary hover:text-primary transition-colors" href="tel:+919920849832">
+<span class="material-symbols-outlined text-sm">call</span> +91 99208 49832
+</a>
+</div>
+</div>
+<div class="hidden lg:block">
+<div class="bg-white dark:bg-surface-dark rounded-2xl p-8 shadow-lg">
+<h3 class="font-display font-medium text-xl text-gray-800 dark:text-white mb-6 text-center">Personal Class Packages</h3>
+<div class="space-y-4">
+<div class="flex justify-between items-center py-3 border-b border-gray-100 dark:border-gray-800">
+<span class="text-gray-600 dark:text-gray-400">12 sessions (30 min)</span>
+<span class="font-display font-bold text-primary">₹8,000/mo</span>
+</div>
+<div class="flex justify-between items-center py-3 border-b border-gray-100 dark:border-gray-800">
+<span class="text-gray-600 dark:text-gray-400">16 sessions (30 min)</span>
+<span class="font-display font-bold text-primary">₹10,500/mo</span>
+</div>
+<div class="flex justify-between items-center py-3 border-b border-gray-100 dark:border-gray-800">
+<span class="text-gray-600 dark:text-gray-400">20 sessions (30 min)</span>
+<span class="font-display font-bold text-primary">₹13,000/mo</span>
+</div>
+<div class="flex justify-between items-center py-3 border-b border-gray-100 dark:border-gray-800">
+<span class="text-gray-600 dark:text-gray-400">12 sessions (1 hour)</span>
+<span class="font-display font-bold text-primary">₹15,000/mo</span>
+</div>
+<div class="flex justify-between items-center py-3">
+<span class="text-gray-600 dark:text-gray-400">20 sessions (1 hour)</span>
+<span class="font-display font-bold text-primary">₹22,500/mo</span>
+</div>
+</div>
+<p class="text-xs text-gray-500 text-center mt-6">Multi-month packages available with significant discounts</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-12 md:py-24 bg-background-light dark:bg-background-dark" id="video">
+<div class="container mx-auto px-6 text-center">
+<span class="text-primary font-medium tracking-widest text-xs uppercase mb-3 block">Teaching Style</span>
+<h2 class="text-3xl md:text-4xl font-display font-medium text-gray-800 dark:text-white mb-8 md:mb-12">See Chakra Project in Action</h2>
+<div class="flex justify-center">
+<blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DSc4tBYD2bW/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/reel/DSc4tBYD2bW/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this post on Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/reel/DSc4tBYD2bW/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A post shared by Santhanam S | International Certified Yoga Teacher (@yogi.santa)</a></p></div></blockquote>
+<script async src="//www.instagram.com/embed.js"></script>
+</div>
+</div>
+</section>
+<section class="py-12 md:py-20 bg-secondary dark:bg-background-dark">
+<div class="container mx-auto px-6">
+<div class="bg-primary rounded-2xl md:rounded-3xl p-6 md:p-16 relative overflow-hidden shadow-2xl">
+<div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 mix-blend-overlay"></div>
+<div class="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+<div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-12">
+<div class="text-white max-w-lg text-center md:text-left">
+<h2 class="text-2xl md:text-4xl font-display font-medium mb-2 md:mb-4">Make yoga part of your life</h2>
+<p class="text-white/90 font-light text-sm md:text-base tracking-wide">Sharing the love of yoga to create positive change in the world.</p>
+</div>
+<div class="w-full md:w-auto flex-1 max-w-md">
+<form class="flex flex-col sm:flex-row items-center border-b border-white/40 pb-2 gap-2 sm:gap-0">
+<input class="w-full px-4 py-2 md:py-3 bg-transparent border-none text-white placeholder-white/70 focus:ring-0 text-sm md:text-base font-light outline-none" placeholder="Your email address" type="email"/>
+<button class="bg-white text-primary text-xs font-bold py-2 md:py-3 px-6 md:px-8 rounded-full hover:bg-gray-50 transition-colors uppercase tracking-wider shadow-lg w-full sm:w-auto" type="button">
+                            Submit
+                        </button>
+</form>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-12 md:py-24 bg-surface-light dark:bg-surface-dark relative overflow-hidden">
+<div class="container mx-auto px-6">
+<div class="text-center mb-8 md:mb-16">
+<span class="text-primary font-bold tracking-[0.2em] text-[10px] uppercase">Testimonial</span>
+<h2 class="text-3xl md:text-4xl font-display font-medium text-gray-800 dark:text-white mt-4">What our members say</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-12 max-w-5xl mx-auto">
+<div class="bg-white dark:bg-background-dark p-6 md:p-10 shadow-sm hover:shadow-xl transition-all duration-300 rounded-2xl border border-transparent hover:border-primary/10 relative">
+<span class="material-symbols-outlined absolute top-6 left-6 md:top-8 md:left-8 text-4xl md:text-6xl text-primary/10 select-none">format_quote</span>
+<p class="text-gray-500 dark:text-gray-300 italic mb-6 md:mb-8 leading-loose font-light text-base md:text-lg relative z-10">"What I love about the teachers is your humanism and your humour... When I fuse in with them you make me feel okay that I wobble a bit and help me remember why I love yoga."</p>
+<div class="flex items-center gap-4">
+<img alt="Neelam" class="w-14 h-14 rounded-full object-cover border-2 border-primary/20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAA-DBYFcEAzs7XueD84nrmq8aEzt3L98YmrGHoX6LpfyvoiAezxc_C3EqkpBmNyotFsH4jOv8UzbO_L4Uo4py-WMBllDUqudENaWpoVDz8E3WBHryTq0MEDbXdd7VAPQgrd6vE1zwlwslwNPcQRD_U7Q10eEmxwQ9Co-CG4ZF13FMbuXGbmt1tCsxCRp_5-4pRdcrKEfeXYsu1aTfZW8hSLYyxcF5D2oURzmhDv0y2SL2ADetAdBGev3r7o2IA1-WPw9K7btNAmhGP"/>
+<div>
+<h4 class="font-bold text-gray-900 dark:text-white text-sm font-display">Neelam</h4>
+<span class="text-[10px] text-gray-400 uppercase tracking-widest">Member</span>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-background-dark p-6 md:p-10 shadow-sm hover:shadow-xl transition-all duration-300 rounded-2xl border border-transparent hover:border-primary/10 relative">
+<span class="material-symbols-outlined absolute top-6 left-6 md:top-8 md:left-8 text-4xl md:text-6xl text-primary/10 select-none">format_quote</span>
+<p class="text-gray-500 dark:text-gray-300 italic mb-6 md:mb-8 leading-loose font-light text-base md:text-lg relative z-10">"Esther, you are a true champion to me in the sense that you embed the yoga arena with genuine integrity... Your vast variety of teachers is phenomenal. I've always recommended your site."</p>
+<div class="flex items-center gap-4">
+<img alt="Vaibhav" class="w-14 h-14 rounded-full object-cover border-2 border-primary/20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDl-uVyMQw49e6Ipa4ucQVfK1iud48Iw00r9_NJpKs4Ui3RQWENji5dPmAXrPxFY8GXXD84Kph-7bCA06AeYjDGvDI3CmLOna9i3EyBZKuJWaG3SKak2RGxc87FzFesYUVMZQWzhA0YzU3Nkya4wPGpzHbDOV5elvRCaDhL_HfLafRTsonYZbEI_7FzPOH5dj537Kev6QPEDKkrDUP2n1d7P5cb-6sgnIbAMDRCAakIYFXwTAf_PHL11sD_h62FVzOPu1ChJczHp4wM"/>
+<div>
+<h4 class="font-bold text-gray-900 dark:text-white text-sm font-display">Vaibhav</h4>
+<span class="text-[10px] text-gray-400 uppercase tracking-widest">Member</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- In-Studio Location Section -->
+<section class="py-8 md:py-12 bg-background-light dark:bg-background-dark border-t border-gray-50 dark:border-gray-800">
+<div class="container mx-auto px-6">
+<div class="max-w-2xl mx-auto text-center">
+<span class="material-symbols-outlined text-primary text-4xl mb-4">location_on</span>
+<h2 class="text-xl md:text-2xl font-display font-medium text-gray-800 dark:text-white mb-4">In-Studio Classes Available</h2>
+<p class="text-gray-500 dark:text-gray-400 mb-6">Join us for offline yoga sessions at our studio location in Mumbai.</p>
+<div class="bg-white dark:bg-surface-dark rounded-2xl p-6 shadow-sm inline-block">
+<p class="text-gray-600 dark:text-gray-300 font-medium">Lokhandwala, Mumbai</p>
+<p class="text-sm text-gray-500 mt-2">12 sessions/month - ₹4,600</p>
+<a class="inline-flex items-center gap-2 text-primary font-medium mt-4 hover:text-gray-800 transition-colors" href="https://chakraproject.practicenow.us/students/subscriptions?service=group_class" target="_blank">
+                    Book Offline Classes <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<footer class="bg-surface-light dark:bg-background-dark pt-12 md:pt-20 pb-8 md:pb-10 border-t border-gray-100 dark:border-gray-800">
+<div class="container mx-auto px-6">
+<div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-10 md:mb-16">
+<div>
+<a class="flex items-center gap-2 mb-6" href="#">
+<img src="https://goodkarma-assets.s3.amazonaws.com/uploads/chakra_project/39/chakra-project-logo.png" alt="Chakra Project Logo" class="h-8 w-auto"/>
+<span class="text-2xl font-display font-bold text-gray-800 dark:text-white">Chakra Project</span>
+</a>
+<p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-6 font-light">
+                    International Certified Yoga Teacher with 15+ years of experience. Bringing balance and happiness to your life through the practice of Yoga.
+                </p>
+<div class="flex gap-3">
+<a class="w-10 h-10 rounded-full bg-white dark:bg-surface-dark flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all shadow-sm" href="https://www.instagram.com/yogi.santa" target="_blank">
+<span class="material-symbols-outlined text-xl">photo_camera</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-white dark:bg-surface-dark flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all shadow-sm" href="https://chakraproject.practicenow.us" target="_blank">
+<span class="material-symbols-outlined text-xl">public</span>
+</a>
+</div>
+</div>
+<div>
+<h4 class="font-display font-bold text-lg text-gray-900 dark:text-white mb-6">Quick Links</h4>
+<ul class="space-y-4 text-sm text-gray-600 dark:text-gray-400 font-light">
+<li><a class="hover:text-primary transition-colors" href="#home">Home</a></li>
+<li><a class="hover:text-primary transition-colors" href="#about">About</a></li>
+<li><a class="hover:text-primary transition-colors" href="#pricing">Group Classes</a></li>
+<li><a class="hover:text-primary transition-colors" href="#workshops">Workshops</a></li>
+<li><a class="hover:text-primary transition-colors" href="#courses">Video Courses</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-display font-bold text-lg text-gray-900 dark:text-white mb-6">Programs</h4>
+<ul class="space-y-4 text-sm text-gray-600 dark:text-gray-400 font-light">
+<li><a class="hover:text-primary transition-colors" href="https://chakraproject.practicenow.us/students/subscriptions?service=group_class" target="_blank">Daily Asana Sadhana</a></li>
+<li><a class="hover:text-primary transition-colors" href="https://chakraproject.practicenow.us/students/subscriptions?service=personal_class" target="_blank">Personal Classes</a></li>
+<li><a class="hover:text-primary transition-colors" href="https://chakraproject.practicenow.us/students/subscriptions?service=workshop" target="_blank">Yoga Sutras Study</a></li>
+<li><a class="hover:text-primary transition-colors" href="https://chakraproject.practicenow.us/students/subscriptions?service=video_subscription" target="_blank">Video Courses</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-display font-bold text-lg text-gray-900 dark:text-white mb-6">Contact</h4>
+<ul class="space-y-4 text-sm text-gray-600 dark:text-gray-400 font-light">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-sm mt-1">location_on</span>
+                        Lokhandwala, Mumbai<br/>India
+                    </li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-sm">phone</span>
+<a href="tel:+919920849832" class="hover:text-primary transition-colors">+91 99208 49832</a>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-sm">calendar_month</span>
+<a href="https://chakraproject.practicenow.us" target="_blank" class="hover:text-primary transition-colors">Book on PracticeNow</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="border-t border-gray-200 dark:border-gray-800 pt-8 text-center text-sm text-gray-400 dark:text-gray-500 font-light">
+<p>© 2025 Chakra Project (Santhanam Sridharan). All rights reserved. Powered by <a href="https://practicenow.us" target="_blank" class="hover:text-primary transition-colors">PracticeNow</a></p>
+</div>
+</div>
+</footer>
+
+</body></html>
